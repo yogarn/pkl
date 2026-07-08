@@ -241,9 +241,7 @@
     \begin{singlespace}
       \fontsize{14pt}{16pt}\selectfont \MakeUppercase{\normalfont\bfseries LAPORAN PRAKTIK KERJA LAPANGAN (PKL)}\par\nobreak
       \vspace{0.5cm}
-      \fontsize{14pt}{16pt}\selectfont \MakeUppercase{\normalfont\bfseries PERUSAHAAN}\par\nobreak
-      \vspace{0.5cm}
-      \fontsize{14pt}{16pt}\selectfont \MakeUppercase{\normalfont\bfseries PT. Your Awesome Factory}
+      \fontsize{14pt}{16pt}\selectfont \MakeUppercase{\normalfont\bfseries \@pklplacetype\ \@pklplace}
       \par\nobreak
       \vspace{1.5cm}
       \MakeUppercase{\normalfont\bfseries \@titlepkl}\\
@@ -285,8 +283,7 @@
     \vspace{0.4cm}
     \begin{doublespace}
       \MakeUppercase{\normalfont LAPORAN PRAKTIK KERJA LAPANGAN (PKL)}\\
-      \MakeUppercase{\normalfont PERUSAHAAAN}\\
-      \MakeUppercase{\@pklplacetype.\ \@pklplace} \\
+      \MakeUppercase{\@pklplacetype\ \@pklplace} \\
 
       \vspace{0.7cm}
       \MakeUppercase{\normalfont\@titlepkl}\par\nobreak
