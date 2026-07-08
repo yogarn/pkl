@@ -166,9 +166,16 @@
 % title
 \newcommand{\titlepkl}[1]{\gdef\@titlepkl{#1}}
 \newcommand{\@titlepkl}{}
-% full name
-\newcommand{\fullname}[1]{\gdef\@fullname{#1}}
-\newcommand{\@fullname}{}
+% author one
+\newcommand{\authorone}[2]{%
+  \gdef\@authorone{#1}%
+  \gdef\@nimone{#2}%
+}
+% author two
+\newcommand{\authortwo}[2]{%
+  \gdef\@authortwo{#1}%
+  \gdef\@nimtwo{#2}%
+}
 % id number (nim)
 \newcommand{\idnum}[1]{\gdef\@idnum{#1}}
 \newcommand{\@idnum}{}
@@ -248,7 +255,12 @@
       {\normalfont
         Disusun oleh:\\
         \vskip1.2cm
-        \normalfont \@fullname \hspace{0.7cm} \MakeUppercase{NIM : \@idnum}}\\
+        {\renewcommand{\arraystretch}{0.8}
+        \begin{tabular}{ll}
+        \@authorone & NIM: \@nimone\\
+        \@authortwo & NIM: \@nimtwo
+        \end{tabular}
+        }}
       \vfill
       {\normalfont
         \MakeUppercase{\normalfont PROGRAM STUDI \@dept}\\
@@ -284,7 +296,12 @@
       {\normalfont Bidang \@laboratory}\\
       \vspace{0.7cm}
       Disusun oleh:\\
-      \@fullname\ \hspace{1cm} NIM : \@idnum\\
+      {\renewcommand{\arraystretch}{0.8}
+        \begin{tabular}{ll}
+        \@authorone & NIM: \@nimone\\
+        \@authortwo & NIM: \@nimtwo
+        \end{tabular}
+      }
     \end{doublespace}
 
     \vspace{0.7cm}
