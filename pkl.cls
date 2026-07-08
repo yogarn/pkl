@@ -262,7 +262,7 @@
       \vfill
       {\normalfont
         \MakeUppercase{\normalfont PROGRAM STUDI \@dept}\\
-        \MakeUppercase{\normalfont JURUSAN \@dept}\\
+        \MakeUppercase{\normalfont DEPARTEMEN \@dept}\\
         \MakeUppercase{\normalfont\@faculty} \\
         \MakeUppercase{\normalfont\@university}\\
         \MakeUppercase{\normalfont\@city}\\
