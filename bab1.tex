@@ -5,59 +5,80 @@
 
 \section{Latar Belakang}
 
-Perkembangan teknologi jaringan nirkabel (\textit{wireless network}) telah mendorong 
-pemanfaatan infrastruktur Wi-Fi pada berbagai sektor, termasuk pendidikan dan 
-pelatihan teknologi informasi. Dalam lingkungan pembelajaran berbasis praktik, 
-peserta tidak hanya dituntut memahami konsep jaringan secara teoritis, tetapi 
-juga mampu mengimplementasikan konfigurasi jaringan secara langsung menggunakan 
-perangkat jaringan yang umum digunakan pada dunia industri. Oleh karena itu, 
-penyelenggaraan pelatihan jaringan memerlukan skenario praktikum yang representatif, 
-realistis, dan telah divalidasi sehingga proses pembelajaran dapat berlangsung 
-secara efektif.
+Perkembangan teknologi jaringan nirkabel (\textit{wireless network}) telah mendorong
+pemanfaatan infrastruktur Wi-Fi pada berbagai sektor, termasuk pendidikan dan
+pelatihan teknologi informasi. Meningkatnya jumlah pengguna serta perangkat yang
+terhubung ke jaringan Wi-Fi menjadi tantangan tersendiri bagi administrator jaringan
+dalam menjaga kualitas layanan. Oleh karena itu, proses perencanaan jaringan perlu
+dilakukan secara sistematis dengan mempertimbangkan kapasitas jaringan, jumlah
+pengguna, serta karakteristik lingkungan agar layanan Wi-Fi dapat beroperasi secara
+optimal \parencite{BRIDOVA_WIFI_DESIGN_2023}.
 
-APIE (Asia Pacific Internet Engineering) Pilot Project Universitas Brawijaya 
-merupakan salah satu program pelatihan yang berfokus pada pengembangan kompetensi 
-peserta di bidang jaringan komputer, khususnya implementasi jaringan Wi-Fi enterprise. 
-Pelaksanaan kegiatan ini menggunakan pendekatan pembelajaran berbasis praktik 
-(\textit{hands-on}) melalui serangkaian misi (\textit{mission}) yang mengharuskan peserta melakukan 
-konfigurasi, pengujian, dan pemecahan masalah jaringan menggunakan perangkat jaringan 
-secara langsung. Agar seluruh aktivitas tersebut dapat berjalan sesuai dengan tujuan 
-pembelajaran, setiap skenario harus dipastikan dapat diimplementasikan, menghasilkan 
-keluaran yang sesuai, serta dapat direplikasi oleh peserta selama pelaksanaan kegiatan.
+Dalam proses perancangan jaringan Wi-Fi, simulasi atau \textit{predictive design}
+dapat digunakan sebagai langkah awal untuk menentukan penempatan \textit{access point}
+(AP), memperkirakan cakupan sinyal, serta mengevaluasi kapasitas jaringan. Namun,
+hasil simulasi tetap perlu divalidasi melalui survei dan pengujian langsung di lapangan
+karena kondisi nyata, seperti interferensi, karakteristik bangunan, maupun perubahan
+lingkungan, dapat menyebabkan perbedaan antara hasil simulasi dengan kondisi
+operasional yang sebenarnya \parencite{BRIDOVA_WIFI_DESIGN_2023}.
 
-Berdasarkan hasil pengamatan selama pelaksanaan Praktik Kerja Lapangan di Direoktorat 
-Teknologi Informasi Universitas Brawijaya, proses persiapan pelatihan tidak hanya 
-mencakup penyusunan materi pembelajaran, tetapi juga memerlukan serangkaian aktivitas 
-teknis berupa implementasi dan pengujian skenario jaringan. Aktivitas tersebut 
-meliputi penyusunan \textit{mission card}, perancangan topologi jaringan, konfigurasi perangkat 
-jaringan seperti \textit{wireless access point}, \textit{wireless LAN controller}, \textit{switch}, 
-dan perangkat pendukung lainnya, pemasangan kabel jaringan, pengujian konektivitas, validasi hasil 
-konfigurasi, hingga evaluasi terhadap kemungkinan kendala yang dapat muncul ketika 
-skenario dijalankan oleh peserta. Seluruh proses tersebut dilakukan menggunakan 
-perangkat jaringan yang sama dengan yang akan digunakan peserta selama pelatihan 
-sehingga skenario yang disusun memiliki tingkat keandalan yang memadai.
+Dalam lingkungan pembelajaran berbasis praktik, peserta tidak hanya dituntut
+memahami konsep jaringan secara teoritis, tetapi juga mampu mengimplementasikan
+konfigurasi jaringan secara langsung menggunakan perangkat jaringan yang umum
+digunakan pada dunia industri. Oleh karena itu, penyelenggaraan pelatihan jaringan
+memerlukan skenario praktikum yang representatif, realistis, dan telah divalidasi
+sehingga proses pembelajaran dapat berlangsung secara efektif.
 
-Selain bertugas melakukan implementasi dan pengujian skenario jaringan, penulis 
-juga berperan sebagai \textit{Teaching Assistant} selama pelaksanaan kegiatan. 
-Peran tersebut lebih difokuskan pada pendampingan teknis peserta ketika mengimplementasikan 
-skenario yang telah divalidasi sebelumnya, membantu proses \textit{troubleshooting} apabila 
-ditemukan kendala, serta memastikan setiap tahapan praktikum dapat diselesaikan sesuai 
-dengan tujuan pembelajaran. Dengan demikian, peran \textit{Teaching Assistant} pada kegiatan ini 
-tidak terlepas dari aktivitas rekayasa jaringan yang telah dilakukan pada tahap persiapan.
+APIE (\textit{Asia Pacific Internet Engineering}) Pilot Project merupakan salah satu
+program pelatihan yang berfokus pada pengembangan kompetensi peserta di bidang
+jaringan komputer, khususnya implementasi jaringan Wi-Fi \textit{enterprise}.
+Pelaksanaan kegiatan ini menggunakan pendekatan pembelajaran berbasis praktik
+(\textit{hands-on}) melalui serangkaian misi (\textit{mission}) yang mengharuskan peserta
+melakukan konfigurasi, pengujian, dan pemecahan masalah jaringan menggunakan
+perangkat jaringan secara langsung. Agar seluruh aktivitas tersebut dapat berjalan
+sesuai dengan tujuan pembelajaran, setiap skenario harus dipastikan dapat
+diimplementasikan, menghasilkan keluaran yang sesuai, serta dapat direplikasi oleh
+peserta selama pelaksanaan kegiatan.
 
-Implementasi dan pengujian skenario jaringan memiliki peranan penting karena kesalahan 
-konfigurasi, ketidaksesuaian topologi, maupun ketidakstabilan perangkat dapat menyebabkan 
-skenario pembelajaran tidak berjalan sebagaimana yang direncanakan. Kondisi tersebut 
-berpotensi menghambat proses belajar peserta dan menyulitkan pencapaian target kompetensi 
-yang telah ditetapkan. Oleh sebab itu, diperlukan proses implementasi dan pengujian 
-yang sistematis untuk memastikan bahwa setiap skenario telah memenuhi kebutuhan teknis 
-sebelum digunakan dalam kegiatan pelatihan.
+Berdasarkan hasil pengamatan selama pelaksanaan Praktik Kerja Lapangan di
+Direktorat Teknologi Informasi Universitas Brawijaya, proses persiapan pelatihan
+tidak hanya mencakup penyusunan materi pembelajaran, tetapi juga memerlukan
+serangkaian aktivitas teknis berupa implementasi dan pengujian skenario jaringan.
+Aktivitas tersebut meliputi penyusunan \textit{mission card}, perancangan topologi
+jaringan, konfigurasi perangkat jaringan seperti \textit{wireless access point},
+\textit{wireless LAN controller}, \textit{switch}, dan perangkat pendukung lainnya,
+pemasangan kabel jaringan, pengujian konektivitas, validasi hasil konfigurasi,
+hingga evaluasi terhadap kemungkinan kendala yang dapat muncul ketika skenario
+dijalankan oleh peserta. Seluruh proses tersebut dilakukan menggunakan perangkat
+jaringan yang sama dengan yang akan digunakan peserta selama pelatihan sehingga
+skenario yang disusun memiliki tingkat keandalan yang memadai.
 
-Berdasarkan uraian tersebut, Praktik Kerja Lapangan ini mengangkat judul "Implementasi 
-dan Pengujian Skenario Jaringan Wi-Fi pada APIE Pilot Project di Universitas Brawijaya". 
-Laporan ini membahas proses implementasi, konfigurasi, pengujian, dan evaluasi skenario 
-jaringan Wi-Fi yang digunakan sebagai lingkungan pembelajaran pada APIE Pilot Project 
-sehingga pelaksanaan pelatihan dapat berlangsung sesuai dengan tujuan yang telah ditetapkan.
+Selain bertugas melakukan implementasi dan pengujian skenario jaringan, penulis
+juga berperan sebagai \textit{Teaching Assistant} selama pelaksanaan kegiatan.
+Peran tersebut lebih difokuskan pada pendampingan teknis peserta ketika
+mengimplementasikan skenario yang telah divalidasi sebelumnya, membantu proses
+\textit{troubleshooting} apabila ditemukan kendala, serta memastikan setiap tahapan
+praktikum dapat diselesaikan sesuai dengan tujuan pembelajaran. Dengan demikian,
+peran \textit{Teaching Assistant} pada kegiatan ini tidak terlepas dari aktivitas
+rekayasa jaringan yang telah dilakukan pada tahap persiapan.
+
+Implementasi dan pengujian skenario jaringan memiliki peranan penting karena
+kesalahan konfigurasi, ketidaksesuaian topologi, maupun ketidakstabilan perangkat
+dapat menyebabkan skenario pembelajaran tidak berjalan sebagaimana yang
+direncanakan. Berdasarkan penelitian \textcite{BRIDOVA_WIFI_DESIGN_2023}, simulasi jaringan saja
+tidak cukup untuk menjamin keberhasilan implementasi sehingga diperlukan
+pengujian dan survei lapangan guna memverifikasi penempatan perangkat maupun
+kinerja jaringan pada kondisi sebenarnya.
+Oleh sebab itu, proses implementasi dan pengujian yang sistematis diperlukan untuk
+memastikan setiap skenario telah memenuhi kebutuhan teknis sebelum digunakan
+dalam kegiatan pelatihan.
+
+Berdasarkan uraian tersebut, Praktik Kerja Lapangan ini mengangkat judul
+"Implementasi dan Pengujian Skenario Jaringan Wi-Fi pada APIE Pilot Project di
+Universitas Brawijaya". Laporan ini membahas proses implementasi, konfigurasi,
+pengujian, dan evaluasi skenario jaringan Wi-Fi yang digunakan sebagai lingkungan
+pembelajaran pada APIE Pilot Project sehingga pelaksanaan pelatihan dapat
+berlangsung sesuai dengan tujuan yang telah ditetapkan.
 
 \section{Rumusan Masalah}
 
