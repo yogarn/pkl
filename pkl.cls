@@ -7,7 +7,7 @@
 % ------------------------------------------------------------
 
 % \RequirePackage can used before \documentclass. \usepackage is not.
-\RequirePackage[english,bahasa]{babel}
+\RequirePackage[english,indonesian]{babel}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \RequirePackage[T1]{fontenc}
@@ -125,7 +125,7 @@
 % ------------------------------------------------------------
 % Redefine caption names
 % ------------------------------------------------------------
-\def\captionsbahasa{%
+\def\captionsindonesian{%
   \def\prefacename{KATA PENGANTAR}%
   \def\contentsname{DAFTAR ISI}%
   \def\listtablename{DAFTAR TABEL}%
@@ -381,7 +381,7 @@
 % ------------------------------------------------------------
 \AtBeginDocument{%
   \if@langindo%
-  \selectlanguage{bahasa}%
+  \selectlanguage{indonesian}%
   \else
   \selectlanguage{english}%
   \fi
