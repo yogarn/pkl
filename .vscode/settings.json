@@ -10,9 +10,25 @@
                 "-file-line-error",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX -> biber -> XeLaTeX*2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
         {
             "name": "XeLaTeX",
             "tools": [
@@ -20,5 +36,5 @@
             ]
         }
     ],
-    "latex-workshop.latex.recipe.default": "XeLaTeX"
+    "latex-workshop.latex.recipe.default": "first"
 }
