@@ -23,30 +23,7 @@ Berdasarkan karakteristik tersebut, implementasi Wi-Fi \textit{enterprise} tidak
 
 \subsection{Arsitektur WLAN Enterprise}
 
-Arsitektur WLAN \textit{enterprise} terdiri atas beberapa komponen yang
-saling terhubung untuk menyediakan akses jaringan nirkabel dan mendukung
-pengelolaan jaringan secara terpusat. Komponen tersebut umumnya meliputi
-\textit{access point} (AP), \textit{wireless LAN controller} (WLC), serta
-infrastruktur jaringan yang menghubungkan AP dan controller dengan jaringan
-lainnya.
-
-Pada arsitektur berbasis controller, AP berfungsi menyediakan akses jaringan
-nirkabel bagi perangkat pengguna, sedangkan controller menyediakan fungsi
-pengelolaan dan koordinasi terhadap beberapa AP. Controller dapat digunakan
-untuk mengelola konfigurasi WLAN, menerapkan kebijakan jaringan, serta
-mengatur parameter operasional AP secara terpusat \parencite{DEZFOULI_REVIEW_2019}.
-Infrastruktur switch menyediakan konektivitas antara AP, controller, dan
-jaringan lainnya sehingga komponen-komponen tersebut dapat berkomunikasi
-sebagai satu kesatuan jaringan.
-
-Dalam arsitektur WLAN berbasis \textit{controller}, fungsi kontrol dan
-penerusan trafik pengguna dapat dipisahkan. Pada arsitektur RUCKUS
-SmartZone, pemisahan tersebut dilakukan antara fungsi
-\textit{control and management plane} pada vSZ dan fungsi
-\textit{data plane}. Trafik data pengguna dapat diteruskan melalui
-jaringan lokal menggunakan mekanisme \textit{local breakout} atau melalui
-\textit{tunneling} menuju \textit{data plane}, bergantung pada arsitektur
-yang digunakan \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
+Arsitektur WLAN \textit{enterprise} terdiri atas beberapa komponen yang saling terhubung, meliputi \textit{access point} (AP), \textit{wireless LAN controller} (WLC), dan infrastruktur jaringan untuk menyediakan akses nirkabel serta mendukung pengelolaan secara terpusat. Pada arsitektur berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control and management plane} pada vSZ dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane} \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
 
 \section{Komponen Infrastruktur Wi-Fi}
 
