@@ -61,11 +61,13 @@ Selain memungkinkan konfigurasi secara terpusat, WLC RUCKUS juga menyediakan ber
     \label{fig:ruckus_smartzone_architecture}
 \end{figure}
 
-Pada arsitektur WLAN berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. Seperti yang ditunjukkan pada Gambar ~\ref{fig:ruckus_smartzone_architecture}, RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control/management plane} dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane}.
+Pada arsitektur WLAN berbasis \textit{controller}, RUCKUS SmartZone memisahkan fungsi \textit{control/management plane} untuk pengelolaan WLAN dan komunikasi AP--\textit{controller} melalui CAPWAP (\textit{Control and Provisioning of Wireless Access Points}) dari \textit{data plane} yang menangani penerusan \textit{traffic} pengguna melalui \textit{local breakout} atau \textit{tunneling}, bergantung pada arsitektur yang digunakan.
 
 \subsection{Access Switch}
 
-Subbab ini membahas peran \textit{access switch} sebagai penghubung perangkat jaringan serta implementasi VLAN dan konektivitas menuju jaringan inti.
+\textit{Access switch} merupakan perangkat jaringan yang ditempatkan pada \textit{access layer} dan digunakan untuk menghubungkan \textit{end devices} dengan infrastruktur jaringan. Secara hierarkis, \textit{access switch} berada pada bagian tepi jaringan dan menyediakan konektivitas bagi berbagai perangkat seperti komputer, telepon IP, kamera, maupun \textit{access point}. Karena berhubungan langsung dengan banyak perangkat, \textit{access switch} umumnya menyediakan jumlah port yang relatif banyak untuk mengakomodasi berbagai koneksi perangkat \parencite{RUIJIE_ACCESS_SWITCH_2023}.
+
+Dalam implementasi WLAN, \textit{access switch} menjadi penghubung antara \textit{access point} (AP), WLC, dan infrastruktur jaringan lainnya. AP dan WLC terhubung ke switch melalui \textit{interface} Ethernet, kemudian switch meneruskan \textit{traffic} dari perangkat tersebut menuju jaringan tujuan. Dengan demikian, \textit{access switch} menyediakan konektivitas jaringan kabel yang menghubungkan komponen WLAN dengan infrastruktur jaringan lainnya \parencite{RUIJIE_ACCESS_SWITCH_2023}.
 
 \section{Konsep Implementasi Jaringan Wi-Fi}
 
