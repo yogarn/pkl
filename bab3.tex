@@ -81,7 +81,19 @@ Selain SSID, terdapat istilah BSSID (\textit{Basic Service Set Identifier}) dan 
 
 \subsection{Wireless Client Association}
 
-Subbab ini menjelaskan proses \textit{association} antara perangkat klien dan \textit{access point}, mulai dari pemindaian jaringan hingga memperoleh akses layanan.
+Untuk dapat menggunakan suatu jaringan WLAN, perangkat klien terlebih dahulu perlu menemukan dan mengidentifikasi jaringan yang tersedia berdasarkan SSID melalui \textit{passive scanning}, yaitu dengan menerima \textit{beacon frame} dari AP, atau \textit{active scanning}, yaitu dengan mengirimkan \textit{probe request} dan menerima \textit{probe response} dari AP. Informasi tersebut kemudian digunakan klien untuk memilih AP yang sesuai berdasarkan SSID, kemampuan jaringan, dan parameter lainnya \parencite{CISCO_80211_SNIFFING_2024}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{"img/wlan_association.png"}
+    \caption{Proses \textit{Wireless Client Association} \parencite{CISCO_MERAKI_80211_ASSOCIATION_2025}}
+    \label{fig:wlan_association}
+\end{figure}
+
+
+Setelah memilih AP, klien melakukan \textit{authentication} pada tingkat IEEE 802.11 melalui pertukaran \textit{authentication frame}, kemudian mengirimkan \textit{association request} yang berisi informasi mengenai kemampuan dan parameter 802.11 yang didukung. AP memeriksa permintaan tersebut dan memberikan \textit{association response} yang menunjukkan keberhasilan atau kegagalan proses \textit{association}. Proses tersebut juga ditunjukkan oleh diagram pada Gambar ~\ref{fig:wlan_association}.
+
+Apabila jaringan menerapkan standar keamanan WPA/WPA2 atau 802.1X yang menggunakan \textit{backend} \textit{Remote Authentication Dial-In User} Service (RADIUS), proses autentikasi keamanan dan pembentukan kunci dilakukan setelah \textit{association} sebelum klien dapat meneruskan \textit{traffic} data \parencite{CISCO_MERAKI_80211_ASSOCIATION_2025}. Setelah seluruh proses berhasil, klien berada dalam kondisi \textit{authenticated} dan \textit{associated} sehingga dapat berkomunikasi melalui AP dengan jaringan lainnya, termasuk ke internet.
 
 \subsection{Dynamic Host Configuration Protocol (DHCP)}
 
