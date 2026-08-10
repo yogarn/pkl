@@ -23,17 +23,36 @@ Berdasarkan karakteristik tersebut, implementasi Wi-Fi \textit{enterprise} tidak
 
 \subsection{Arsitektur WLAN Enterprise}
 
-Arsitektur WLAN \textit{enterprise} terdiri atas beberapa komponen yang saling terhubung, meliputi \textit{access point} (AP), \textit{wireless LAN controller} (WLC), dan infrastruktur jaringan untuk menyediakan akses nirkabel serta mendukung pengelolaan secara terpusat. Pada arsitektur berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control and management plane} pada vSZ dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane} \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
+Arsitektur WLAN \textit{enterprise} terdiri atas beberapa komponen yang saling terhubung, meliputi \textit{access point} (AP), \textit{wireless LAN controller} (WLC), dan infrastruktur jaringan untuk menyediakan akses nirkabel serta mendukung pengelolaan secara terpusat. Salah satu arsitektur WLAN \textit{enterprise} yang digunakan oleh \textcite{RUCKUS_PRODUCT_GUIDE_2018} menghubungkan AP dan WLC ke \textit{access switch} yang kemudian terhubung ke jaringan inti.
 
 \section{Komponen Infrastruktur Wi-Fi}
 
 \subsection{Access Point}
 
-Subbab ini membahas fungsi \textit{access point}, prinsip kerja perangkat, serta perannya dalam menyediakan layanan akses jaringan nirkabel kepada pengguna.
+Access point merupakan perangkat jaringan yang memungkinkan perangkat dengan kapabilitas nirkabel untuk terhubung ke jaringan kabel. Sebelum era nirkabel, perangkat jaringan umumnya terhubung ke switch melalui kabel dengan teknologi Ethernet. Namun, penggunaan kabel memiliki keterbatasan dalam hal mobilitas dan fleksibilitas. Dengan adanya access point, perangkat dapat terhubung ke jaringan tanpa perlu menggunakan kabel fisik, sehingga memberikan kemudahan dalam mengakses jaringan dari berbagai lokasi \parencite{CISCO_AP_2026}. Komunikasi antara AP dan perangkat klien berlangsung menggunakan gelombang radio sebagai media transmisi. Salah satu standar yang digunakan sebagai dasar dalam komunikasi tersebut adalah IEEE 802.11, yang mendefinisikan spesifikasi \textit{physical layer} (PHY) dan \textit{medium access control} (MAC) pada WLAN \parencite{IEEE_WLAN}.
+
+AP menggunakan satu atau beberapa \textit{radio interface} untuk menyediakan komunikasi nirkabel pada pita frekuensi tertentu. Salah satu standar 802.11 yang mendukung komunikasi pada pita 2,4 GHz dan 5 GHz adalah IEEE 802.11ac, atau yang juga dikenal dengan Wi-Fi 5. Sementara itu, pada standar yang lebih baru seperti IEEE 802.11ax (Wi-Fi 6E), mendukung tiga pita frekuensi sekaligus, yaitu 2,4 GHz, 5 GHz, dan 6 GHz \parencite{GERACI_WIFI_2025}. Pada setiap pita, komunikasi dilakukan melalui kanal (\textit{channel}) tertentu yang digunakan untuk mengirim dan menerima \textit{frame} IEEE 802.11. Pemilihan kanal dan parameter radio lainnya perlu disesuaikan dengan kondisi lingkungan untuk mengurangi interferensi dan mempertahankan kualitas komunikasi nirkabel.
+
+Melalui pita frekuensi dan kanal yang digunakan, AP dapat menyediakan layanan
+jaringan nirkabel kepada perangkat klien. Untuk memungkinkan perangkat klien
+menemukan jaringan yang tersedia, AP secara berkala mengirimkan
+\textit{beacon frame} yang berisi informasi mengenai jaringan yang disediakan,
+seperti SSID dan berbagai parameter WLAN. Perangkat klien dapat melakukan
+\textit{scanning} terhadap kanal yang tersedia untuk menerima
+\textit{beacon frame} tersebut dan mengidentifikasi AP yang dapat digunakan.
+Selain \textit{passive scanning} melalui \textit{beacon frame}, perangkat
+klien juga dapat melakukan \textit{active scanning} dengan mengirimkan
+\textit{probe request} dan menerima \textit{probe response} dari AP. Setelah
+menemukan AP yang sesuai, perangkat klien dapat melakukan proses
+\textit{association} melalui pertukaran \textit{association request} dan
+\textit{association response} sebelum dapat menggunakan layanan jaringan
+melalui AP \parencite{CISCO_80211_SNIFFING_2024}.
 
 \subsection{Wireless LAN Controller (WLC)}
 
 Subbab ini menjelaskan fungsi \textit{wireless LAN controller} sebagai pusat pengelolaan jaringan Wi-Fi, termasuk konfigurasi perangkat, distribusi kebijakan, dan pengawasan jaringan.
+
+% Pada arsitektur berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control and management plane} pada vSZ dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane} \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
 
 \subsection{Access Switch}
 
