@@ -50,9 +50,18 @@ melalui AP \parencite{CISCO_80211_SNIFFING_2024}.
 
 \subsection{Wireless LAN Controller (WLC)}
 
-Subbab ini menjelaskan fungsi \textit{wireless LAN controller} sebagai pusat pengelolaan jaringan Wi-Fi, termasuk konfigurasi perangkat, distribusi kebijakan, dan pengawasan jaringan.
+\textit{Wireless LAN controller} (WLC) merupakan perangkat yang digunakan untuk mengelola dan mengoordinasikan \textit{access point} (AP) dalam jaringan WLAN secara terpusat \parencite{CISCO_WLC_2026}. Dalam pengelolaan WLAN, WLC dapat digunakan untuk mengatur parameter jaringan seperti SSID, kebijakan keamanan, konfigurasi radio, dan berbagai pengaturan lain yang bisa diterapkan pada banyak AP sekaligus.
 
-% Pada arsitektur berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control and management plane} pada vSZ dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane} \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
+Selain memungkinkan konfigurasi secara terpusat, WLC RUCKUS juga menyediakan berbagai fitur pengelolaan WLAN yang mendukung operasional jaringan \textit{enterprise}, seperti \textit{rogue AP detection} untuk mengidentifikasi AP yang tidak termasuk dalam infrastruktur jaringan yang dikelola, \textit{URL filtering} untuk mengendalikan akses ke situs web tertentu, serta pengelolaan parameter radio secara otomatis, seperti pemilihan \textit{channel} pada AP berdasarkan kondisi lingkungan jaringan \parencite{RUCKUS_PRODUCT_GUIDE_2018}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{"img/ruckus_smartzone_architecture.png"}
+    \caption{Arsitektur WLC Ruckus SmartZone \parencite{RUCKUS_PRODUCT_GUIDE_2018}}
+    \label{fig:ruckus_smartzone_architecture}
+\end{figure}
+
+Pada arsitektur WLAN berbasis \textit{controller}, fungsi kontrol dan penerusan trafik pengguna dapat dipisahkan. Seperti yang ditunjukkan pada Gambar ~\ref{fig:ruckus_smartzone_architecture}, RUCKUS SmartZone menerapkan pemisahan tersebut melalui \textit{control/management plane} dan \textit{data plane}, dengan trafik pengguna dapat diteruskan melalui \textit{local breakout} atau \textit{tunneling} menuju \textit{data plane}.
 
 \subsection{Access Switch}
 
