@@ -63,9 +63,11 @@
 \newcommand{\mychapter}[2]{
     \setcounter{chapter}{#1}
     \setcounter{section}{0}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
     \chapter*{#2}
     \addcontentsline{toc}{chapter}{#2}
-  }
+}
 
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
