@@ -69,34 +69,23 @@ Pada arsitektur WLAN berbasis \textit{controller}, RUCKUS SmartZone memisahkan f
 
 Dalam implementasi WLAN, \textit{access switch} menjadi penghubung antara \textit{access point} (AP), WLC, dan infrastruktur jaringan lainnya. AP dan WLC terhubung ke switch melalui \textit{interface} Ethernet, kemudian switch meneruskan \textit{traffic} dari perangkat tersebut menuju jaringan tujuan. Dengan demikian, \textit{access switch} menyediakan konektivitas jaringan kabel yang menghubungkan komponen WLAN dengan infrastruktur jaringan lainnya \parencite{RUIJIE_ACCESS_SWITCH_2023}.
 
-\section{Konsep Implementasi Jaringan Wi-Fi}
+\section{Implementasi dan Pengelolaan Jaringan Wi-Fi}
 
-\subsection{Service Set Identifier (SSID)}
+\subsection{Service Set Identifier (SSID), Basic SSID (BSSID), dan Extended SSID (ESSID)}
 
-Subbab ini membahas konsep SSID sebagai identitas jaringan Wi-Fi yang digunakan untuk membedakan layanan jaringan nirkabel.
+\textit{Service Set Identifier} (SSID) merupakan identitas yang digunakan untuk membedakan suatu jaringan Wi-Fi dari jaringan nirkabel lainnya yang berada dalam area yang sama. SSID disiarkan oleh \textit{access point} melalui \textit{beacon frame} secara berkala sehingga perangkat klien dalam jangkauan dapat mengidentifikasi jaringan yang tersedia dan memilih jaringan yang akan digunakan \parencite{FORTINET_SSID_2026}.
 
-\subsection{Virtual Local Area Network (VLAN)}
+Dalam jaringan \textit{enterprise}, SSID dapat digunakan untuk membedakan layanan atau kelompok akses jaringan yang disediakan kepada pengguna, misalnya jaringan khusus tamu, staff, maupun jaringan untuk perangkat tertentu. Dengan adanya SSID, administrator jaringan dapat mengelompokkan pengguna dan perangkat ke dalam jaringan yang sesuai dengan kebijakan keamanan dan akses yang telah ditentukan \parencite{FORTINET_SSID_2026}.
 
-Subbab ini menjelaskan konsep VLAN sebagai mekanisme segmentasi jaringan untuk meningkatkan keamanan, efisiensi, dan pengelolaan jaringan.
-
-\subsection{Trunk dan Access Port}
-
-Subbab ini membahas perbedaan fungsi \textit{access port} dan \textit{trunk port} beserta implementasinya dalam jaringan berbasis VLAN.
-
-\subsection{Dynamic Host Configuration Protocol (DHCP)}
-
-Subbab ini menjelaskan prinsip kerja DHCP dalam proses pemberian alamat IP secara otomatis kepada perangkat klien.
-
-\subsection{Inter-VLAN Routing}
-
-Subbab ini membahas konsep komunikasi antar VLAN melalui mekanisme \textit{routing} sehingga perangkat pada segmen jaringan yang berbeda dapat saling berkomunikasi.
+Selain SSID, terdapat istilah BSSID (\textit{Basic Service Set Identifier}) dan ESSID (\textit{Extended Service Set Identifier}) yang berkaitan dengan identifikasi jaringan WLAN. BSSID umumnya berupa alamat fisik (MAC) dari AP yang menyediakan jaringan \parencite{FORTINET_SSID_2026}. Sementara itu, ESSID dapat digunakan untuk mengidentifikasi jaringan yang terdiri dari beberapa AP yang tergabung dalam satu \textit{Extended Service Set} (ESS). ESSID memungkinkan perangkat klien untuk tetap terhubung ke jaringan yang sama meskipun berpindah dari satu AP ke AP lainnya dalam ESS tersebut, sehingga mendukung mobilitas pengguna dalam lingkungan WLAN \textit{seamless roaming}.
 
 \subsection{Wireless Client Association}
 
 Subbab ini menjelaskan proses \textit{association} antara perangkat klien dan \textit{access point}, mulai dari pemindaian jaringan hingga memperoleh akses layanan.
 
+\subsection{Dynamic Host Configuration Protocol (DHCP)}
 
-\section{Pengelolaan dan Konfigurasi WLAN}
+Subbab ini menjelaskan prinsip kerja DHCP dalam proses pemberian alamat IP secara otomatis kepada perangkat klien.
 
 \subsection{AP Adoption}
 
