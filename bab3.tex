@@ -31,22 +31,9 @@ Arsitektur WLAN \textit{enterprise} terdiri atas beberapa komponen yang saling t
 
 Access point merupakan perangkat jaringan yang memungkinkan perangkat dengan kapabilitas nirkabel untuk terhubung ke jaringan kabel. Sebelum era nirkabel, perangkat jaringan umumnya terhubung ke switch melalui kabel dengan teknologi Ethernet. Namun, penggunaan kabel memiliki keterbatasan dalam hal mobilitas dan fleksibilitas. Dengan adanya access point, perangkat dapat terhubung ke jaringan tanpa perlu menggunakan kabel fisik, sehingga memberikan kemudahan dalam mengakses jaringan dari berbagai lokasi \parencite{CISCO_AP_2026}. Komunikasi antara AP dan perangkat klien berlangsung menggunakan gelombang radio sebagai media transmisi. Salah satu standar yang digunakan sebagai dasar dalam komunikasi tersebut adalah IEEE 802.11, yang mendefinisikan spesifikasi \textit{physical layer} (PHY) dan \textit{medium access control} (MAC) pada WLAN \parencite{IEEE_WLAN}.
 
-AP menggunakan satu atau beberapa \textit{radio interface} untuk menyediakan komunikasi nirkabel pada pita frekuensi tertentu. Salah satu standar 802.11 yang mendukung komunikasi pada pita 2,4 GHz dan 5 GHz adalah IEEE 802.11ac, atau yang juga dikenal dengan Wi-Fi 5. Sementara itu, pada standar yang lebih baru seperti IEEE 802.11ax (Wi-Fi 6E), mendukung tiga pita frekuensi sekaligus, yaitu 2,4 GHz, 5 GHz, dan 6 GHz \parencite{GERACI_WIFI_2025}. Pada setiap pita, komunikasi dilakukan melalui kanal (\textit{channel}) tertentu yang digunakan untuk mengirim dan menerima \textit{frame} IEEE 802.11. Pemilihan kanal dan parameter radio lainnya perlu disesuaikan dengan kondisi lingkungan untuk mengurangi interferensi dan mempertahankan kualitas komunikasi nirkabel.
+AP menggunakan satu atau beberapa \textit{radio interface} untuk menyediakan komunikasi nirkabel pada \textit{frequency band} tertentu. Salah satu standar 802.11 yang mendukung komunikasi pada pita 2,4 GHz dan 5 GHz adalah IEEE 802.11ac, atau yang juga dikenal dengan Wi-Fi 5. Sementara itu, pada standar yang lebih baru seperti IEEE 802.11ax (Wi-Fi 6E), mendukung tiga \textit{frequency band} sekaligus, yaitu 2,4 GHz, 5 GHz, dan 6 GHz \parencite{GERACI_WIFI_2025}. Pada setiap pita, komunikasi dilakukan melalui kanal (\textit{channel}) tertentu yang digunakan untuk mengirim dan menerima \textit{frame} IEEE 802.11. Pemilihan kanal dan parameter radio lainnya perlu disesuaikan dengan kondisi lingkungan untuk mengurangi interferensi dan mempertahankan kualitas komunikasi nirkabel.
 
-Melalui pita frekuensi dan kanal yang digunakan, AP dapat menyediakan layanan
-jaringan nirkabel kepada perangkat klien. Untuk memungkinkan perangkat klien
-menemukan jaringan yang tersedia, AP secara berkala mengirimkan
-\textit{beacon frame} yang berisi informasi mengenai jaringan yang disediakan,
-seperti SSID dan berbagai parameter WLAN. Perangkat klien dapat melakukan
-\textit{scanning} terhadap kanal yang tersedia untuk menerima
-\textit{beacon frame} tersebut dan mengidentifikasi AP yang dapat digunakan.
-Selain \textit{passive scanning} melalui \textit{beacon frame}, perangkat
-klien juga dapat melakukan \textit{active scanning} dengan mengirimkan
-\textit{probe request} dan menerima \textit{probe response} dari AP. Setelah
-menemukan AP yang sesuai, perangkat klien dapat melakukan proses
-\textit{association} melalui pertukaran \textit{association request} dan
-\textit{association response} sebelum dapat menggunakan layanan jaringan
-melalui AP \parencite{CISCO_80211_SNIFFING_2024}.
+Melalui \textit{frequency band} dan kanal yang digunakan, AP dapat menyediakan layanan jaringan nirkabel kepada perangkat klien. Untuk memungkinkan perangkat klien menemukan jaringan yang tersedia, AP secara berkala mengirimkan \textit{beacon frame} yang berisi informasi mengenai jaringan yang disediakan, seperti SSID dan berbagai parameter WLAN. Perangkat klien dapat melakukan \textit{scanning} terhadap kanal yang tersedia untuk menerima \textit{beacon frame} tersebut dan mengidentifikasi AP yang dapat digunakan. Selain \textit{passive scanning} melalui \textit{beacon frame}, perangkat klien juga dapat melakukan \textit{active scanning} dengan mengirimkan \textit{probe request} dan menerima \textit{probe response} dari AP. Setelah menemukan AP yang sesuai, perangkat klien dapat melakukan proses \textit{association} melalui pertukaran \textit{association request} dan \textit{association response} sebelum dapat menggunakan layanan jaringan melalui AP \parencite{CISCO_80211_SNIFFING_2024}.
 
 \subsection{Wireless LAN Controller (WLC)}
 
@@ -73,11 +60,11 @@ Dalam implementasi WLAN, \textit{access switch} menjadi penghubung antara \texti
 
 \subsection{Service Set Identifier (SSID), Basic SSID (BSSID), dan Extended SSID (ESSID)}
 
-\textit{Service Set Identifier} (SSID) merupakan identitas yang digunakan untuk membedakan suatu jaringan Wi-Fi dari jaringan nirkabel lainnya yang berada dalam area yang sama. SSID disiarkan oleh \textit{access point} melalui \textit{beacon frame} secara berkala sehingga perangkat klien dalam jangkauan dapat mengidentifikasi jaringan yang tersedia dan memilih jaringan yang akan digunakan \parencite{FORTINET_SSID_2026}.
+\textit{Service Set Identifier} (SSID) merupakan identitas yang digunakan untuk membedakan suatu jaringan Wi-Fi dari jaringan nirkabel lainnya yang berada dalam area yang sama. SSID disiarkan oleh \textit{access point} melalui \textit{beacon frame} secara berkala sehingga perangkat klien dalam jangkauan dapat mengidentifikasi jaringan yang tersedia dan memilih jaringan yang akan digunakan \parencite{FORTINET_SSID}.
 
-Dalam jaringan \textit{enterprise}, SSID dapat digunakan untuk membedakan layanan atau kelompok akses jaringan yang disediakan kepada pengguna, misalnya jaringan khusus tamu, staff, maupun jaringan untuk perangkat tertentu. Dengan adanya SSID, administrator jaringan dapat mengelompokkan pengguna dan perangkat ke dalam jaringan yang sesuai dengan kebijakan keamanan dan akses yang telah ditentukan \parencite{FORTINET_SSID_2026}.
+Dalam jaringan \textit{enterprise}, SSID dapat digunakan untuk membedakan layanan atau kelompok akses jaringan yang disediakan kepada pengguna, misalnya jaringan khusus tamu, staff, maupun jaringan untuk perangkat tertentu. Dengan adanya SSID, administrator jaringan dapat mengelompokkan pengguna dan perangkat ke dalam jaringan yang sesuai dengan kebijakan keamanan dan akses yang telah ditentukan \parencite{FORTINET_SSID}.
 
-Selain SSID, terdapat istilah BSSID (\textit{Basic Service Set Identifier}) dan ESSID (\textit{Extended Service Set Identifier}) yang berkaitan dengan identifikasi jaringan WLAN. BSSID umumnya berupa alamat fisik (MAC) dari AP yang menyediakan jaringan \parencite{FORTINET_SSID_2026}. Sementara itu, ESSID dapat digunakan untuk mengidentifikasi jaringan yang terdiri dari beberapa AP yang tergabung dalam satu \textit{Extended Service Set} (ESS). ESSID memungkinkan perangkat klien untuk tetap terhubung ke jaringan yang sama meskipun berpindah dari satu AP ke AP lainnya dalam ESS tersebut, sehingga mendukung mobilitas pengguna dalam lingkungan WLAN \textit{seamless roaming}.
+Selain SSID, terdapat istilah BSSID (\textit{Basic Service Set Identifier}) dan ESSID (\textit{Extended Service Set Identifier}) yang berkaitan dengan identifikasi jaringan WLAN. BSSID umumnya berupa alamat fisik (MAC) dari AP yang menyediakan jaringan \parencite{FORTINET_SSID}. Sementara itu, ESSID dapat digunakan untuk mengidentifikasi jaringan yang terdiri dari beberapa AP yang tergabung dalam satu \textit{Extended Service Set} (ESS). ESSID memungkinkan perangkat klien untuk tetap terhubung ke jaringan yang sama meskipun berpindah dari satu AP ke AP lainnya dalam ESS tersebut, sehingga mendukung mobilitas pengguna dalam lingkungan WLAN \textit{seamless roaming}.
 
 \subsection{Wireless Client Association}
 
@@ -97,28 +84,42 @@ Apabila jaringan menerapkan standar keamanan WPA/WPA2 atau 802.1X yang menggunak
 
 \subsection{Dynamic Host Configuration Protocol (DHCP)}
 
-Subbab ini menjelaskan prinsip kerja DHCP dalam proses pemberian alamat IP secara otomatis kepada perangkat klien.
+Dynamic Host Configuration Protocol (DHCP) merupakan protokol yang digunakan untuk memberikan konfigurasi jaringan kepada perangkat klien secara otomatis. DHCP memungkinkan perangkat yang terhubung ke jaringan memperoleh alamat \textit{Internet Protocol} (IP) tanpa harus dikonfigurasi secara manual oleh administrator. Selain alamat IP, DHCP dapat memberikan parameter jaringan lain yang diperlukan agar perangkat dapat berkomunikasi, seperti \textit{subnet mask}, alamat \textit{Domain Name System} (DNS), dan \textit{default gateway}. Pendekatan ini mengurangi kebutuhan konfigurasi manual pada setiap perangkat dan mempermudah pengelolaan alamat IP. Penggunaan konfigurasi secara dinamis juga membantu pengelolaan jaringan ketika terdapat perangkat yang berganti, bertambah, atau berkurang, karena administrator tidak perlu menetapkan konfigurasi IP secara manual untuk setiap perangkat \parencite{FORTINET_DHCP}.
 
-\subsection{AP Adoption}
+DHCP memiliki tiga komponen utama, yaitu DHCP server, DHCP client, dan DHCP relay. DHCP server bertanggung jawab menyediakan alamat IP dan parameter konfigurasi jaringan kepada perangkat yang terhubung. Alamat IP tersebut dapat diberikan dari sekumpulan alamat yang tersedia sehingga penggunaannya dapat dikelola secara dinamis. DHCP client merupakan perangkat yang membutuhkan konfigurasi jaringan dan menerima informasi tersebut dari DHCP server. Sementara itu, DHCP relay berfungsi meneruskan pesan DHCP antara client dan server ketika keduanya berada pada jaringan atau subnet yang berbeda. Keberadaan DHCP relay memungkinkan satu DHCP server melayani klien yang berada pada beberapa subnet tanpa harus menempatkan DHCP server pada setiap subnet \parencite{FORTINET_DHCP}.
 
-Subbab ini membahas proses registrasi dan integrasi \textit{access point} ke dalam sistem pengelolaan \textit{wireless LAN controller}.
+Sementara itu, supaya klien dapat menerima konfigurasi dari DHCP, terdapat serangkaian proses yang harus dijalankan. Proses tersebut dimulai ketika DHCP \textit{client} melakukan inisialisasi dan belum memiliki konfigurasi alamat IP. \textit{Client} mengirimkan pesan \textit{DHCPDISCOVER} secara broadcast pada subnet lokal untuk mencari DHCP server yang tersedia. DHCP server yang menerima pesan tersebut dapat memberikan respons berupa \textit{DHCPOFFER} yang berisi alamat IP yang ditawarkan beserta parameter konfigurasi jaringan lainnya. Setelah menerima satu atau lebih tawaran, \textit{client} memilih salah satu DHCP server dan mengirimkan pesan \textit{DHCPREQUEST} secara \textit{broadcast} untuk menyatakan konfigurasi yang dipilih. Pesan tersebut juga secara implisit memberi tahu DHCP server lain bahwa tawaran mereka tidak dipilih \parencite{RFC2131}.
 
-\subsection{Wireless LAN Configuration}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{"img/dhcp.jpg"}
+    \caption{Proses \textit{Dynamic Host Configuration Protocol} (DHCP)}
+    \label{fig:dhcp_process}
+\end{figure}
 
-Subbab ini menjelaskan konfigurasi layanan WLAN, termasuk pembuatan SSID, pemetaan VLAN, serta pengaturan parameter jaringan.
+DHCP server yang dipilih kemudian mencatat alokasi alamat untuk \textit{client} tersebut dan mengirimkan pesan \textit{DHCPACK} yang berisi alamat IP beserta parameter konfigurasi yang telah disetujui bersama. Setelah menerima DHCPACK, client menerapkan konfigurasi tersebut dan mencatat durasi \textit{lease} yang diberikan oleh server. Proses ini ditunjukkan pada Gambar ~\ref{fig:dhcp_process}.
+
+\textit{Client} juga dapat melakukan pemeriksaan akhir untuk memastikan alamat IP yang diterima belum digunakan oleh perangkat lain. Apabila server tidak dapat memenuhi permintaan, server dapat mengirimkan \textit{DHCPNAK} sehingga client harus mengulangi proses konfigurasi. Ketika perangkat tidak lagi membutuhkan alamat yang dialokasikan, \textit{client} dapat mengirimkan \textit{DHCPRELEASE} untuk melepaskan lease tersebut \parencite{RFC2131}.
 
 \subsection{Radio Configuration}
 
-Subbab ini membahas konfigurasi parameter radio, seperti kanal, lebar pita frekuensi, dan daya pancar untuk mengoptimalkan performa jaringan Wi-Fi.
+Konfigurasi radio merupakan bagian dari pengelolaan \textit{access point} yang digunakan untuk mengatur parameter komunikasi nirkabel pada radio yang digunakan. Parameter yang dapat dikonfigurasi meliputi \textit{data rate}, \textit{transmit power}, \textit{channel} radio, serta pengaturan antena. Pengaturan tersebut memengaruhi karakteristik komunikasi antara \textit{access point} dan perangkat klien, sehingga perlu disesuaikan dengan kondisi lingkungan jaringan \parencite{CISCO_RADIO_CONFIGURATION_2002}.
+
+Salah satu parameter yang perlu diperhatikan adalah \textit{transmit power}, yaitu tingkat daya yang digunakan oleh radio \textit{access point} untuk memancarkan sinyal. \textcite{CISCO_RADIO_CONFIGURATION_2002} menjelaskan bahwa tingkat daya maksimum yang dapat digunakan bergantung pada \textit{regulatory domain} yang berlaku. Tingkat daya juga dapat diturunkan untuk mengurangi interferensi atau menyesuaikan cakupan jaringan. Selain itu, konfigurasi \textit{data rate} menentukan kecepatan transmisi data yang dapat digunakan oleh radio. \textit{Access point} dapat menyesuaikan kecepatan transmisi berdasarkan kondisi komunikasi, seperti keberadaan penghalang atau interferensi, sehingga perangkat dapat menggunakan \textit{data rate} yang sesuai dengan kondisi kanal.
+
+Pengaturan \textit{channel} radio juga merupakan bagian penting dalam konfigurasi radio, terutama ketika beberapa \textit{access point} ditempatkan pada area yang berdekatan. Penggunaan \textit{channel} yang tidak sesuai dapat meningkatkan interferensi dan menyebabkan penurunan \textit{throughput}. \textcite{CISCO_RADIO_CONFIGURATION_2002} menjelaskan bahwa \textit{channel} yang digunakan oleh radio dapat dipilih secara manual untuk mengatasi masalah interferensi atau dapat ditentukan secara otomatis melalui mekanisme pencarian \textit{channel} yang memiliki tingkat penggunaan lebih rendah secara otomatis. Namun, pemilihan \textit{channel} secara otomatis perlu disesuaikan dengan kebutuhan implementasi, karena pada kondisi tertentu \textit{access point} perlu menggunakan \textit{channel} tertentu untuk menghindari interferensi dengan perangkat lain.
+
+Karakteristik \textit{frequency band} juga memengaruhi jangkauan dan kualitas koneksi jaringan Wi-Fi. \textit{Band} 2,4 GHz memiliki panjang gelombang yang lebih panjang sehingga secara umum memiliki jangkauan yang lebih luas dan kemampuan penetrasi terhadap objek atau dinding yang lebih baik dibandingkan \textit{band} dengan frekuensi yang lebih tinggi. Namun, \textit{band} 2,4 GHz memiliki jumlah \textit{channel} yang lebih terbatas dan banyak digunakan oleh berbagai perangkat, sehingga lebih rentan terhadap kepadatan jaringan dan interferensi. Sebaliknya, \textit{band} 5 GHz dan 6 GHz menyediakan lebih banyak spektrum dan \textit{channel} dengan kapasitas yang lebih besar sehingga dapat mendukung kecepatan transmisi yang lebih tinggi, tetapi memiliki jangkauan yang relatif lebih pendek dan lebih mudah mengalami pelemahan sinyal akibat objek fisik. 
+
+Dalam lingkungan dengan beberapa \textit{access point}, penggunaan \textit{frequency band} dan \textit{channel} juga perlu mempertimbangkan kepadatan perangkat serta interferensi dari jaringan lain. \textcite{INTEL_24_5_6GHZ} menjelaskan bahwa \textit{band} 2,4 GHz cenderung memiliki tingkat penggunaan yang lebih tinggi karena banyak perangkat lama masih menggunakan pita tersebut, sehingga dapat meningkatkan network clutter dan contention. \textit{Band} 6 GHz memiliki lebih banyak \textit{channel} dan hanya dapat digunakan oleh perangkat yang mendukung Wi-Fi 6E atau teknologi yang kompatibel, sehingga interferensi dari perangkat Wi-Fi lama relatif lebih rendah. Dengan demikian, pemilihan \textit{band} dan \textit{channel} tidak hanya berkaitan dengan kecepatan transmisi, tetapi juga perlu mempertimbangkan cakupan, kondisi lingkungan, jumlah perangkat, dan tingkat interferensi yang terdapat pada area implementasi \parencite{INTEL_24_5_6GHZ}.
 
 \subsection{Authentication}
 
-Subbab ini menjelaskan mekanisme autentikasi pengguna pada jaringan Wi-Fi, baik menggunakan \textit{pre-shared key} maupun metode autentikasi lainnya.
+Autentikasi pada jaringan Wi-Fi digunakan untuk memastikan bahwa perangkat atau pengguna yang terhubung memiliki hak untuk memperoleh akses ke jaringan. Pada IEEE 802.11, proses \textit{authentication} pada tingkat MAC merupakan bagian dari tahapan awal sebelum \textit{association}, sedangkan pada jaringan \textit{enterprise} yang menerapkan IEEE 802.1X terdapat mekanisme autentikasi tambahan untuk mengendalikan akses jaringan. IEEE 802.1X menggunakan tiga komponen utama, yaitu \textit{supplicant} yang berada pada perangkat klien, \textit{authenticator} yang umumnya dijalankan oleh \textit{access point} atau perangkat jaringan, dan \textit{authentication server} yang melakukan verifikasi identitas pengguna. Dengan demikian, keberhasilan \textit{association} belum secara otomatis berarti bahwa klien telah memperoleh akses penuh ke jaringan \parencite{CISCO_MERAKI_80211_ASSOCIATION_2025}.
 
-\subsection{Firmware Management}
+Untuk mendukung pengelolaan autentikasi secara terpusat, IEEE 802.1X dapat menggunakan RADIUS (\textit{Remote Authentication Dial-In User Service}) sebagai protokol komunikasi antara \textit{authenticator} dan \textit{authentication server}. Dalam arsitektur tersebut, \textit{access point} atau perangkat jaringan bertindak sebagai RADIUS client yang meneruskan informasi autentikasi dari \textit{supplicant} kepada server. Server kemudian melakukan verifikasi terhadap identitas dan kredensial pengguna. Pada lingkungan jaringan \textit{enterprise}, server autentikasi dapat terhubung dengan \textit{database} pengguna sehingga akun dapat dikelola secara terpusat. \textcite{RFC 3580} juga menjelaskan penggunaan pesan RADIUS seperti \textit{Access-Request}, \textit{Access-Accept}, dan \textit{Access-Reject} dalam proses autentikasi IEEE 802.1X.
 
-Subbab ini membahas pengelolaan versi \textit{firmware} perangkat jaringan untuk memastikan kompatibilitas, keamanan, dan stabilitas sistem.
-
+Apabila autentikasi berhasil, \textit{authentication server} memberikan respons yang menunjukkan bahwa akses pengguna dapat diterima, kemudian \textit{authenticator} memberikan akses jaringan kepada klien sesuai dengan kebijakan yang diterapkan. Sebaliknya, apabila autentikasi gagal, akses jaringan dapat ditolak. Mekanisme ini memungkinkan jaringan Wi-Fi \textit{enterprise} menggunakan akun individual, seperti \textit{username} dan kata sandi, untuk mengidentifikasi pengguna tanpa harus menggunakan satu \textit{pre-shared key} yang sama untuk seluruh pengguna. Dengan demikian, autentikasi berbasis IEEE 802.1X dan RADIUS mendukung pengelolaan akses pengguna secara terpusat dan sesuai untuk jaringan dengan jumlah pengguna yang besar \parencite{RFC3580}.
 
 \section{Pengujian Jaringan Wi-Fi}
 
@@ -138,11 +139,6 @@ Subbab ini menjelaskan pengujian cakupan sinyal Wi-Fi untuk mengetahui kualitas 
 
 Subbab ini membahas pengujian performa jaringan melalui pengukuran kecepatan transfer data pada jaringan Wi-Fi.
 
-\subsection{Site Survey menggunakan NetSpot}
+\subsection{Site Survey}
 
 Subbab ini menjelaskan konsep \textit{wireless site survey} menggunakan perangkat lunak NetSpot untuk mengevaluasi kualitas sinyal, cakupan jaringan, dan distribusi layanan Wi-Fi.
-
-
-\section{Penelitian Terdahulu}
-
-Bagian ini membahas beberapa penelitian terdahulu yang berkaitan dengan implementasi, konfigurasi, maupun pengujian jaringan Wi-Fi \textit{enterprise}. Hasil kajian digunakan sebagai landasan dalam pelaksanaan implementasi dan pengujian skenario jaringan pada APIE Pilot Project Universitas Brawijaya.
