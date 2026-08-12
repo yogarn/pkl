@@ -6,24 +6,60 @@
 
 \section{Diagram Alir Metode}
 
-Curabitur vel tellus ligula. In consequat quam enim, sit amet
-ullamcorper est elementum nec. Vestibulum mattis congue
-tincidunt. Duis elementum erat ac varius rutrum. Proin sagittis, neque
-scelerisque sodales pharetra, nulla lacus ornare est, et cursus urna
-ex ut turpis. Morbi auctor, erat vitae semper cursus, nibh ipsum
-tristique lorem, maximus ultrices massa neque eu risus. Interdum et
-malesuada fames ac ante ipsum primis in faucibus.
+Diagram alir metode pelaksanaan Praktik Kerja Lapangan menggambarkan tahapan
+pelaksanaan kegiatan sebagai \textit{Technical Engineer} dalam mempersiapkan,
+mengimplementasikan, dan menguji jaringan Wi-Fi untuk kegiatan APIE Pilot Project.
+Tahapan dimulai dari identifikasi kebutuhan jaringan pelatihan, dilanjutkan dengan
+\textit{site survey}, analisis hasil survey, perancangan jaringan Wi-Fi, persiapan
+perangkat AP dan WLC, implementasi dan konfigurasi, serta pengujian. Apabila hasil
+pengujian belum sesuai dengan kebutuhan, dilakukan \textit{troubleshooting} dan
+pengujian ulang. Setelah kebutuhan terpenuhi, dilakukan evaluasi sebagai tahap
+akhir pelaksanaan.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[
+        height=0.7\textheight,
+        keepaspectratio
+    ]{img/Diagram-Alur-PKL.png}
+    \caption{Diagram Alir Metode Pelaksanaan PKL}
+    \label{fig:diagram_alur_pkl}
+\end{figure}
 
 
 \section{Spesifikasi Hardware dan Software}
 
-Curabitur vel tellus ligula. In consequat quam enim, sit amet
-ullamcorper est elementum nec. Vestibulum mattis congue
-tincidunt. Duis elementum erat ac varius rutrum. Proin sagittis, neque
-scelerisque sodales pharetra, nulla lacus ornare est, et cursus urna
-ex ut turpis. Morbi auctor, erat vitae semper cursus, nibh ipsum
-tristique lorem, maximus ultrices massa neque eu risus. Interdum et
-malesuada fames ac ante ipsum primis in faucibus.
+\subsection{Hardware}
+
+\begin{table}[H]
+\centering
+\caption{Hardware yang Digunakan}
+\label{tab:hardware}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Nama Perangkat} & \textbf{Fungsi} \\ \hline
+Ruckus R550 & Menyediakan akses jaringan Wi-Fi pada lingkungan pelatihan. \\ \hline
+H3C Switch & Menghubungkan perangkat jaringan pada lingkungan pelatihan. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Software}
+
+\begin{table}[H]
+\centering
+\caption{Software yang Digunakan}
+\label{tab:software}
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Nama Software} & \textbf{Fungsi} \\ \hline
+Omada Design Hub & Merancang jaringan Wi-Fi berdasarkan hasil site survey. \\ \hline
+NetSpot & Melakukan site survey dan analisis kondisi jaringan Wi-Fi. \\ \hline
+WSL & Menyediakan lingkungan Linux untuk kebutuhan teknis selama pelaksanaan. \\ \hline
+Docker & Menjalankan layanan berbasis container yang digunakan dalam kegiatan. \\ \hline
+RADIUS & Menyediakan layanan autentikasi untuk jaringan. \\ \hline
+\end{tabular}
+\end{table}
+
 
 \section{Metode Perancangan}
 
